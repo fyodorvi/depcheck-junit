@@ -4,13 +4,16 @@
   "description": "Convert depcheck report in junit-compatible format",
   "main": "src/index.js",
   "license": "MIT",
+  "bin": {
+    "depcheck": "bin/depcheck.js"
+  },
   "scripts": {
     "test": "mocha"
   },
   "devDependencies": {
-    "depcheck": "^0.8.3",
     "mocha": "^6.2.0",
-    "xml-reader": "^2.4.3"
+    "xml-reader": "^2.4.3",
+    "yargs": "^13.3.0"
   },
   "dependencies": {
     "junit-report-builder": "^1.3.2"

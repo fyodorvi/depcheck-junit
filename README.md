@@ -16,8 +16,8 @@ npm i -g depcheck-junit
 All you need to do - pipe or `depcheck` json result into `depcheck-junit`:
 
 ```bash
-depcheck --junit | depcheck-unit
-``` 
+depcheck --json | depcheck-junit
+```
 
 Output:
 
@@ -41,8 +41,8 @@ Output:
 Optionally, you may specify className (by default, `package.json`):
 
 ```bash
-depcheck --junit | depcheck-unit --className my-module/package.json
-``` 
+depcheck --json | depcheck-junit --className my-module/package.json
+```
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

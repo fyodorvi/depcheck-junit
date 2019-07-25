@@ -10,27 +10,36 @@ const argv = require('yargs')
     .argv;
 
 if(!process.stdin.isTTY) {
-    const data = fs.readFileSync(0, 'utf-8');
+    process.stdin.resume();
+    process.stdin.setEncoding('utf8');
 
-    let parsedJson;
+    let data = "";
 
-    try {
-        parsedJson = JSON.parse(data);
-    } catch (e) {
-        console.error(e);
-        console.error(`Error parsing JSON. Are you piping valid output from depcheck?`);
-        process.exit(1);
-    }
+    process.stdin.on('data', (chunk) => {
+        data += chunk;
+    });
 
-    const resultXML = convert(parsedJson, argv.className);
-    const hasError = parsedJson.dependencies.length > 0 || parsedJson.devDependencies.length > 0 || Object.keys(parsedJson.missing).length > 0;
+    process.stdin.on('end', () => {
+        let parsedJson;
 
-    console.log(resultXML);
+        try {
+            parsedJson = JSON.parse(data);
+        } catch (e) {
+            console.error(e);
+            console.error(`Error parsing JSON. Are you piping valid output from depcheck?`);
+            process.exit(1);
+        }
 
-    if (hasError) {
-        // still exit with error if there was a missing dependency
-        process.exit(1);
-    }
+        const resultXML = convert(parsedJson, argv.className);
+        const hasError = parsedJson.dependencies.length > 0 || parsedJson.devDependencies.length > 0 || Object.keys(parsedJson.missing).length > 0;
+
+        console.log(resultXML);
+
+        if (hasError) {
+            // still exit with error if there was a missing dependency
+            process.exit(1);
+        }
+    });
 } else {
     console.error('No stdin provided! Run with --help for more info');
     process.exit(1);

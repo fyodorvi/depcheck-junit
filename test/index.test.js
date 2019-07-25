@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { convert } = require('../src/converter');
+const { convert } = require('../src/index');
 const XmlReader = require('xml-reader');
 
 const testJSON = {

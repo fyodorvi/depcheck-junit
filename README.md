@@ -3,7 +3,7 @@
 ![CircleCI](https://img.shields.io/circleci/build/gh/fyodorvi/depcheck-junit/master)
 ![npm](https://img.shields.io/npm/v/depcheck-junit)
 
-Junit out for [depcheck](https://github.com/depcheck/depcheck) utility, handy for CI.
+Junit output for [depcheck](https://github.com/depcheck/depcheck) utility, handy for CI.
 
 ## Install
 

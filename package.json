@@ -1,6 +1,6 @@
 {
   "name": "depcheck-junit",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Convert depcheck report in junit-compatible format",
   "main": "src/index.js",
   "license": "MIT",

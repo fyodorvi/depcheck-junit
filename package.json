@@ -7,6 +7,10 @@
   "bin": {
     "depcheck-junit": "bin/depcheck-junit.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fyodorvi/depcheck-junit.git"
+  },
   "scripts": {
     "test": "mocha"
   },

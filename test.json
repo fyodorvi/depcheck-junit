@@ -1,0 +1,18 @@
+{
+  "dependencies": [
+    "request"
+  ],
+  "devDependencies": [
+    "lodash"
+  ],
+  "missing": {
+    "moment": [
+      "/Users/fyodor/Work/sauce-v5/packages/sauce-identity/tests/unit/services/SauceAuthService.test.ts",
+      "/Users/fyodor/ Work/sauce-v5/packages/sauce-identity/src/services/SauceIdentityService.ts",
+      "/Users/fyodor/Work/sauce-v5/packages/sauce-identity/src/services/SauceAuthService.ts"
+    ]
+  },
+  "using": {},
+  "invalidFiles": {},
+  "invalidDirs": {}
+}

@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "license": "MIT",
   "bin": {
-    "depcheck": "bin/depcheck.js"
+    "depcheck-junit": "bin/depcheck-junit.js"
   },
   "scripts": {
     "test": "mocha"
